@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Zone | Notice Management — Abdul Hossain High School</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#071b63;--blue:#123aa3;--cyan:#1595e7;--ink:#17213b;--muted:#667085;--line:#e6ebf4;--bg:#f5f8ff;--white:#fff;--danger:#c62828;--success:#147a55;--shadow:0 24px 70px rgba(8,31,92,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:Inter,"Noto Sans Bengali",Arial,sans-serif;background:radial-gradient(circle at 10% 0%,#e7f0ff 0,transparent 32%),radial-gradient(circle at 100% 15%,#e5f8ff 0,transparent 28%),var(--bg);min-height:100vh}
+a{color:inherit;text-decoration:none}
+.topbar{background:linear-gradient(100deg,#061650,#0a2b85 55%,#0c7dc4);color:#fff;padding:12px 20px}
+.topbar-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:13px}
+.brand-mini{display:flex;align-items:center;gap:10px;font-weight:700}.brand-mini img{width:38px;height:38px;object-fit:contain}.brand-mini span{opacity:.95}
+.top-links{display:flex;gap:14px;flex-wrap:wrap}.top-links a{opacity:.92}.top-links a:hover{opacity:1;text-decoration:underline}
+.hero{position:relative;overflow:hidden;padding:64px 20px 86px;background:linear-gradient(135deg,#06164f 0%,#0b2c84 52%,#0e7ebc 100%);color:#fff}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08);filter:blur(1px)}.hero:before{width:360px;height:360px;right:-100px;top:-170px}.hero:after{width:280px;height:280px;left:-110px;bottom:-160px}
+.hero-inner{max-width:1180px;margin:auto;position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.09);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.05;margin:18px 0 15px;letter-spacing:-.04em}.hero p{max-width:680px;color:rgba(255,255,255,.82);font-size:16px;line-height:1.8;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn-primary{background:#fff;color:var(--navy);box-shadow:0 10px 30px rgba(0,0,0,.14)}.btn-primary:hover{transform:translateY(-2px)}.btn-ghost{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.07)}
+.hero-card{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(12px);border-radius:24px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.hero-card .shield{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.14);font-size:25px;margin-bottom:20px}.hero-card h3{margin:0 0 8px;font-size:20px}.hero-card p{font-size:14px;line-height:1.7}
+.container{max-width:1180px;margin:-42px auto 70px;padding:0 20px;position:relative;z-index:2}.panel{background:var(--white);border:1px solid rgba(7,27,99,.07);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:25px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.panel-head h2{margin:0;font-size:21px;color:var(--navy)}.panel-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.panel-body{padding:28px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.card h3{margin:0 0 5px;color:var(--navy)}.muted{color:var(--muted);font-size:13px;line-height:1.7}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{margin-bottom:14px}.field.full{grid-column:1/-1}label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:#27324a}input,textarea{width:100%;border:1px solid #d7deea;border-radius:12px;background:#fbfcff;padding:12px 13px;font:inherit;color:var(--ink);outline:0;transition:.2s}input:focus,textarea:focus{border-color:#5a7ddc;box-shadow:0 0 0 4px rgba(37,91,201,.09);background:#fff}textarea{min-height:145px;resize:vertical}
+.filebox{border:1px dashed #b9c7df;border-radius:14px;padding:14px;background:#f8faff}.filebox input{border:0;padding:4px;background:transparent}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}.btn-dark{background:var(--navy);color:#fff}.btn-dark:hover{background:#0b2b86}.btn-soft{background:#edf2ff;color:var(--navy)}.btn-danger{background:#fff0f0;color:var(--danger);border:1px solid #ffd3d3}.btn-danger:hover{background:#ffe6e6}
+.status{display:none;margin-top:14px;padding:12px 14px;border-radius:12px;background:#eef4ff;color:#173579;font-size:13px;line-height:1.6;white-space:pre-wrap}.status.show{display:block}.status.error{background:#fff0f0;color:#a51e1e}.status.success{background:#ecf9f2;color:#126344}
+.login-card{max-width:520px;margin:auto}.login-icon{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#e9f0ff,#e6f8ff);display:grid;place-items:center;font-size:27px;margin-bottom:18px}.secure-note{display:flex;gap:10px;align-items:flex-start;background:#f7f9fd;border:1px solid var(--line);padding:13px;border-radius:13px;margin-top:16px;font-size:12px;color:var(--muted);line-height:1.6}
+.notice-list{display:grid;gap:14px;margin-top:18px}.notice-item{border:1px solid var(--line);border-radius:16px;padding:17px;background:linear-gradient(180deg,#fff,#fbfcff)}.notice-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.notice-item h4{margin:0;color:var(--navy);font-size:16px}.notice-date{font-size:11px;color:#8791a5;white-space:nowrap}.notice-item p{margin:9px 0;color:#566176;font-size:13px;line-height:1.75;white-space:pre-wrap}.notice-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.attachment{font-size:12px;color:#2354b8;display:inline-block;margin-top:6px}
+footer{background:#06164f;color:#cdd7f1;padding:28px 20px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer-inner strong{color:#fff}.footer-links{display:flex;gap:15px;flex-wrap:wrap;font-size:12px}.footer-links a:hover{color:#fff}
+.hidden{display:none!important}
+@media(max-width:900px){.hero-inner,.grid{grid-template-columns:1fr}.hero-card{max-width:560px}.container{margin-top:-30px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:600px){.topbar-inner{align-items:flex-start;flex-direction:column}.top-links{gap:9px}.hero{padding:45px 16px 70px}.container{padding:0 12px}.panel-body{padding:18px}.panel-head{padding:20px}.hero h1{font-size:36px}.hero-card{padding:19px}}
+
+    /* Mobile menu visibility fix */
+    #menuBar .navbar-toggler,
+    #mobilbar .mobilToggle {
+      background: #07176e !important;
+      color: #fff !important;
+      border: 2px solid rgba(255,255,255,.65) !important;
+      border-radius: 8px !important;
+      min-width: 48px;
+      min-height: 44px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,.20);
+    }
+
+    #menuBar .navbar-toggler:focus,
+    #menuBar .navbar-toggler:active,
+    #mobilbar .mobilToggle:focus,
+    #mobilbar .mobilToggle:active {
+      background: #000e59 !important;
+      color: #fff !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(240,165,0,.28) !important;
+    }
+
+    #menuBar .navbar-toggler-icon img,
+    #mobilbar .navbar-toggler-icon img {
+      width: 25px !important;
+      height: 25px !important;
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    /* Keep mobile navigation controls readable against the dark header */
+    @media (max-width: 991.98px) {
+      #mobilbar .mobilMenuCollapse,
+      #mobilbar .navbar-collapse {
+        background: #07176e !important;
+      }
+      #mobilbar .nav-link,
+      #mobilbar .dropdown-item {
+        color: #fff !important;
+      }
+      #mobilbar .nav-link {
+        border-bottom: 1px solid rgba(255,255,255,.10);
+      }
+    }
+
+</style>
+</head>
+<body><div class="site-access-bar"><div class="site-access-inner"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a><a href="parent-zone.html">Parent's Zone</a><a href="teacher-zone.html">Teacher's Zone</a><a href="admin.html">Admin Zone</a></div></div><style>.site-access-bar{background:#07176e;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);position:relative;z-index:1000}.site-access-inner{width:min(1180px,92%);margin:auto;display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:7px 0;flex-wrap:wrap}.site-access-inner a{color:#fff;text-decoration:none;font:500 13px/1.2 Arial,sans-serif;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:.2s}.site-access-inner a:hover{background:#fff;color:#07176e}@media(max-width:600px){.site-access-inner{justify-content:center;gap:6px}.site-access-inner a{font-size:12px;padding:6px 9px}}</style>
+<header>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <a class="brand-mini" href="index.html"><img src="ahhs-logo.png" alt="Abdul Hossain High School"><span>আব্দুল হোসেন উচ্চ বিদ্যালয়</span></a>
+      <nav class="top-links" aria-label="Admin links">
+        <a href="index.html">Home</a>
+        <a href="notice-board.html">Notice Board</a>
+        <a href="index.html">Main Website</a>
+      </nav>
+    </div>
+  </div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Secure Administration Portal</span>
+        <h1>Notice Administration<br>made simple.</h1>
+        <p>প্রতিষ্ঠানের গুরুত্বপূর্ণ নোটিশ দ্রুত, নিরাপদ ও সুশৃঙ্খলভাবে প্রকাশ, সম্পাদনা এবং পরিচালনা করার জন্য Admin Zone।</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#login">🔐 Notice Admin Login</a>
+          <a class="btn btn-ghost" href="notice-board.html">📢 View Notice Board</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="shield">🛡️</div>
+        <h3>Institutional Notice Control</h3>
+        <p>শুধু অনুমোদিত admin account ব্যবহার করে Notice publish বা update করুন। সংযুক্ত PDF, JPG, PNG ও WEBP ফাইলও পরিচালনা করা যাবে।</p>
+      </aside>
+    </div>
+  </section>
+</header>
+
+<main class="container" id="login">
+  <section class="panel" id="loginPanel">
+    <div class="panel-head">
+      <div><h2>Notice Admin Login</h2><p>Authorized administrator access only</p></div>
+    </div>
+    <div class="panel-body">
+      <div class="login-card">
+        <div class="card">
+          <div class="login-icon">🔑</div>
+          <h3>স্বাগতম, Admin</h3>
+          <p class="muted">আপনার অনুমোদিত ইমেইল ও পাসওয়ার্ড দিয়ে প্রবেশ করুন। Login সফল হলে Notice Management Dashboard স্বয়ংক্রিয়ভাবে খুলবে।</p>
+          <form id="loginForm">
+            <div class="field"><label for="email">Admin Email</label><input autocomplete="username" id="email" type="email" placeholder="admin@example.com" required></div>
+            <div class="field"><label for="password">Password</label><input autocomplete="current-password" id="password" type="password" placeholder="••••••••" required></div>
+            <button class="btn btn-dark" style="width:100%" type="submit">Login to Admin Zone →</button>
+          </form>
+          <div class="secure-note"><span>🔒</span><span>আপনার password এই page-এ সংরক্ষণ করা হয় না। Authentication Supabase Auth-এর মাধ্যমে সম্পন্ন হয়।</span></div>
+          <div class="status" id="loginStatus" role="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="appPanel" style="margin-top:22px">
+    <div class="panel-head">
+      <div><h2 id="formHeading">নতুন Notice প্রকাশ করুন</h2><p>Publish, update and manage official notices</p></div>
+      <button class="btn btn-soft" id="logoutBtn" type="button">Logout</button>
+    </div>
+    <div class="panel-body">
+      <div class="grid">
+        <div class="card">
+          <form id="noticeForm">
+            <input id="noticeId" type="hidden">
+            <div class="form-grid">
+              <div class="field full"><label for="title">Notice শিরোনাম</label><input id="title" maxlength="250" placeholder="যেমন: পরীক্ষার সময়সূচি পরিবর্তন সংক্রান্ত বিজ্ঞপ্তি" required></div>
+              <div class="field full"><label for="content">Notice বিস্তারিত</label><textarea id="content" placeholder="Notice-এর সম্পূর্ণ তথ্য লিখুন..." required></textarea></div>
+              <div class="field full"><label for="attachment">সংযুক্তি <span class="muted">(ঐচ্ছিক · সর্বোচ্চ 10 MB)</span></label><div class="filebox"><input accept="application/pdf,image/jpeg,image/png,image/webp" id="attachment" type="file"></div><div class="muted" style="margin-top:7px">JPG, PNG, WEBP অথবা PDF। নতুন ফাইল না দিলে আগের সংযুক্তি অপরিবর্তিত থাকবে।</div><div class="muted" id="currentAttachment" style="margin-top:7px"></div></div>
+            </div>
+            <div class="actions"><button class="btn btn-dark" id="saveBtn" type="submit">Notice প্রকাশ করুন</button><button class="btn btn-soft" id="cancelEdit" type="button">Reset</button></div>
+          </form>
+          <div class="status" id="status" role="status"></div>
+        </div>
+        <aside class="card">
+          <h3>Publishing Guide</h3>
+          <p class="muted">প্রকাশের আগে Notice title ও details যাচাই করুন। প্রয়োজন হলে PDF বা image attachment যুক্ত করুন। Publish করার পর Notice Board-এ এটি স্বয়ংক্রিয়ভাবে প্রদর্শিত হবে।</p>
+          <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+          <h3>Quick Links</h3>
+          <div class="actions"><a class="btn btn-soft" href="notice-board.html">📢 Notice Board</a><a class="btn btn-soft" href="index.html">⌂ Home</a></div>
+        </aside>
+      </div>
+      <div class="card" style="margin-top:22px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><div><h3 style="margin:0">Published Notices</h3><p class="muted" style="margin:5px 0 0">সাম্প্রতিক Notice-গুলো এখান থেকে edit বা delete করুন।</p></div><span class="muted" id="noticeCount"></span></div>
+        <div class="notice-list" id="noticeItems"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="footer-inner"><div><strong>Abdul Hossain High School</strong><div style="font-size:12px;margin-top:4px">Admin Zone · Notice Management</div></div><div class="footer-links"><a href="index.html">Home</a><a href="notice-board.html">Notice Board</a><a href="index.html">Main Website</a></div></div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ const BUCKET = 'notice-files';
+ const setStatus = (msg, type='') => { const el=$('status'); el.textContent=msg; el.className='status show '+type; };
+ const setLoginStatus = (msg, type='') => { const el=$('loginStatus'); el.textContent=msg; el.className='status show '+type; };
+ if (!window.supabase || !window.SUPABASE_URL || window.SUPABASE_URL.includes('PASTE_') || !window.SUPABASE_ANON_KEY || window.SUPABASE_ANON_KEY.includes('PASTE_')) {
+   setLoginStatus('Supabase configuration পাওয়া যায়নি। supabase-config.js যাচাই করুন।','error'); return;
+ }
+ const db = window.supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+ let existingAttachment={url:null,name:null,type:null};
+ function resetForm(){ $('noticeForm').reset(); $('noticeId').value=''; existingAttachment={url:null,name:null,type:null}; $('currentAttachment').textContent=''; $('formHeading').textContent='নতুন Notice প্রকাশ করুন'; $('saveBtn').textContent='Notice প্রকাশ করুন'; }
+ function showAttachment(container,url,name,type){ if(!url)return; const a=document.createElement('a'); a.className='attachment'; a.href=url; a.target='_blank'; a.rel='noopener'; a.textContent=(type&&type.startsWith('image/')?'🖼️ ছবি দেখুন: ':'📎 ফাইল খুলুন: ')+(name||'সংযুক্তি'); container.append(a); }
+ async function refresh(){
+   const {data,error}=await db.from('notices').select('id,title,content,created_at,attachment_url,attachment_name,attachment_type').order('created_at',{ascending:false});
+   if(error){setStatus('Notice তালিকা আনা যায়নি: '+error.message,'error');return;}
+   const box=$('noticeItems'); box.replaceChildren(); $('noticeCount').textContent=(data.length||0)+'টি Notice';
+   if(!data.length){box.innerHTML='<p class="muted">এখনো কোনো Notice প্রকাশিত হয়নি।</p>';return;}
+   data.forEach(n=>{
+     const item=document.createElement('article'); item.className='notice-item';
+     const top=document.createElement('div'); top.className='notice-top'; const h=document.createElement('h4'); h.textContent=n.title; const d=document.createElement('div'); d.className='notice-date'; d.textContent=new Date(n.created_at).toLocaleString('bn-BD'); top.append(h,d);
+     const p=document.createElement('p'); p.textContent=n.content; const att=document.createElement('div'); showAttachment(att,n.attachment_url,n.attachment_name,n.attachment_type);
+     const tools=document.createElement('div'); tools.className='notice-tools';
+     const edit=document.createElement('button'); edit.className='btn btn-soft'; edit.type='button'; edit.textContent='Edit'; edit.onclick=()=>{ $('noticeId').value=n.id; $('title').value=n.title; $('content').value=n.content; existingAttachment={url:n.attachment_url,name:n.attachment_name,type:n.attachment_type}; $('currentAttachment').replaceChildren(); showAttachment($('currentAttachment'),n.attachment_url,n.attachment_name,n.attachment_type); $('formHeading').textContent='Notice সম্পাদনা'; $('saveBtn').textContent='পরিবর্তন সংরক্ষণ'; window.scrollTo({top:0,behavior:'smooth'}); };
+     const del=document.createElement('button'); del.className='btn btn-danger'; del.type='button'; del.textContent='Delete'; del.onclick=async()=>{if(!confirm('এই Notice মুছে ফেলবেন?'))return; const {error}=await db.from('notices').delete().eq('id',n.id); if(error)setStatus('Delete ব্যর্থ: '+error.message,'error'); else {setStatus('Notice মুছে ফেলা হয়েছে।','success');refresh();}};
+     tools.append(edit,del); item.append(top,p,att,tools); box.append(item);
+   });
+ }
+ async function showSession(){ const {data:{session}}=await db.auth.getSession(); $('loginPanel').classList.toggle('hidden',!!session); $('appPanel').classList.toggle('hidden',!session); if(session){$('loginStatus').className='status'; refresh();} }
+ $('loginForm').addEventListener('submit',async e=>{e.preventDefault();setLoginStatus('নিরাপদভাবে লগইন করা হচ্ছে...');const {error}=await db.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});if(error){setLoginStatus('লগইন ব্যর্থ: '+error.message,'error');return;}setLoginStatus('লগইন সফল। Admin Dashboard খোলা হচ্ছে...','success');showSession();});
+ $('logoutBtn').onclick=async()=>{await db.auth.signOut();resetForm();setLoginStatus('Logout হয়েছে।');showSession();};
+ $('cancelEdit').onclick=resetForm;
+ $('noticeForm').addEventListener('submit',async e=>{e.preventDefault();const id=$('noticeId').value;const payload={title:$('title').value.trim(),content:$('content').value.trim(),attachment_url:existingAttachment.url,attachment_name:existingAttachment.name,attachment_type:existingAttachment.type};if(!payload.title||!payload.content){setStatus('শিরোনাম ও বিস্তারিত লিখুন।','error');return;}const file=$('attachment').files[0];if(file){const allowed=['application/pdf','image/jpeg','image/png','image/webp'];if(!allowed.includes(file.type)){setStatus('শুধু PDF, JPG, PNG বা WEBP ফাইল আপলোড করা যাবে।','error');return;}if(file.size>10*1024*1024){setStatus('ফাইল 10 MB-এর চেয়ে ছোট হতে হবে।','error');return;}setStatus('ফাইল আপলোড হচ্ছে...');const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=Date.now()+'-'+Math.random().toString(36).slice(2)+'-'+safeName;const {error:uploadError}=await db.storage.from(BUCKET).upload(path,file,{upsert:false,contentType:file.type});if(uploadError){setStatus('ফাইল আপলোড ব্যর্থ: '+uploadError.message,'error');return;}const {data:publicData}=db.storage.from(BUCKET).getPublicUrl(path);payload.attachment_url=publicData.publicUrl;payload.attachment_name=file.name;payload.attachment_type=file.type;}
+   setStatus('Notice সংরক্ষণ হচ্ছে...');const result=id?await db.from('notices').update(payload).eq('id',id):await db.from('notices').insert(payload);if(result.error){setStatus('সংরক্ষণ ব্যর্থ: '+result.error.message,'error');return;}setStatus(id?'Notice পরিবর্তন করা হয়েছে।':'নতুন Notice প্রকাশ করা হয়েছে।','success');resetForm();refresh();
+ });
+ db.auth.onAuthStateChange(()=>showSession()); showSession();
+})();
+</script>
+
+<script>
+(function(){
+  function initMobileNavigation(){
+    var mobileNav=document.getElementById('mobileNavbarSupportedContent');
+    var mobileToggle=document.querySelector('#mobilbar .mobilToggle');
+    if(!mobileNav || !mobileToggle) return;
+    mobileToggle.setAttribute('data-target','#mobileNavbarSupportedContent');
+    mobileToggle.setAttribute('aria-controls','mobileNavbarSupportedContent');
+    mobileToggle.type='button';
+    mobileToggle.addEventListener('click',function(e){
+      e.preventDefault(); e.stopPropagation();
+      var open=!mobileNav.classList.contains('show');
+      mobileNav.classList.toggle('show',open);
+      mobileToggle.setAttribute('aria-expanded',String(open));
+    });
+    mobileNav.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link){
+      var menu=link.parentElement.querySelector(':scope > .dropdown-menu');
+      if(!menu) return;
+      link.addEventListener('click',function(e){
+        if(window.innerWidth > 991) return;
+        e.preventDefault(); e.stopPropagation();
+        var item=link.parentElement, wasOpen=item.classList.contains('show');
+        mobileNav.querySelectorAll('.nav-item.dropdown.show').forEach(function(other){
+          if(other!==item){
+            other.classList.remove('show');
+            var om=other.querySelector(':scope > .dropdown-menu'); if(om) om.classList.remove('show');
+            var ol=other.querySelector(':scope > .nav-link'); if(ol) ol.setAttribute('aria-expanded','false');
+          }
+        });
+        item.classList.toggle('show',!wasOpen);
+        menu.classList.toggle('show',!wasOpen);
+        link.setAttribute('aria-expanded',String(!wasOpen));
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initMobileNavigation);
+  else initMobileNavigation();
+})();
+</script>
+</body>
+</html>

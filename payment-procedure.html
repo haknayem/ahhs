@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+<html><head>
+<style>
+      .home-notice-box {
+        background-image: url(&#39;frontend/ppimsc/image/notice.png&#39;);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        padding: 100px 0;
+    }
+
+
+    .home-notice-content {
+        background: #fff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000029;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .home-notice-content marquee {
+        height: 280px;
+    }
+
+    .home-notice-content ul li {
+        display: inline-block;
+        height: 57px;
+        width: 100%;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #0000000f;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 3px;
+    }
+
+    .home-notice-content ul li a .home-notice-year-box {
+        width: 14%;
+        float: left;
+        background: #000e59 0% 0% no-repeat padding-box;
+        text-align: center;
+        padding: 5px;
+        border-radius: 3px;
+    }
+
+    @media only screen and (max-width: 600px) {
+         .home-notice-content ul li a .home-notice-year-box {
+            width: 22%;
+        }
+    }
+
+    .home-notice-content ul li .home-notice-year-box {
+        width: 86%;
+        float: left;
+        padding-left: 20px;
+    }
+
+    .home-notice-content ul li .home-notice-year-box .home-notice-content-month {
+        font-size: 15px;
+        color: #fff;
+        display: block;
+    }
+
+    .home-notice-content ul li .home-notice-year-box .home-notice-content-date {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 600;
+    }
+    
+    /* Abdul Hossain High School logo: responsive desktop and mobile */
+    #logoPart .logo img, #mobilbar .logoMobil img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 82px;
+      object-fit: contain;
+    }
+    @media (max-width: 767px) {
+      #logoPart .logo img { max-height: 64px; }
+      #mobilbar .logoMobil img { max-height: 64px; width: 64px; }
+    }
+
+</style>
+<script>
+      document.addEventListener(&#34;DOMContentLoaded&#34;, function () {
+        const gallery = document.querySelector(&#34;.image-gallery&#34;);
+
+        const images = gallery.children;
+
+        // Clone the gallery content for seamless looping
+        gallery.innerHTML += gallery.innerHTML;
+
+        // Calculate the animation duration dynamically
+        const totalWidth = images[0].offsetWidth * images.length;
+        gallery.style.width = `${totalWidth}px`;
+
+        // Adjust the animation speed based on content width
+        const animationDuration = totalWidth / 100; // Adjust speed as needed
+        gallery.style.animationDuration = `${animationDuration}s`;
+
+        // একবার clone করলেই হবে
+        gallery.innerHTML += gallery.innerHTML;
+    });
+    </script>
+<!-- Slider -->
+<style>
+      .gallery-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.image-gallery {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: scroll 25s linear infinite;
+}
+
+.image-gallery:hover {
+    animation-play-state: paused;
+}
+
+.image-gallery img {
+    flex-shrink: 0;
+    width: 280px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 220px;
+        height: 180px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 576px) {
+    .image-gallery {
+        gap: 12px;
+    }
+
+    .image-gallery img {
+        width: 160px;
+        height: 120px;
+    }
+}
+
+
+    /* shift incharge  */
+    .incharge-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    height: 100%;
+}
+
+.incharge-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(6, 49, 156, 0.18);
+}
+
+.incharge-card::before {
+    content: &#34;&#34;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #06319c, #0ea5e9);
+}
+
+.incharge-image {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #eef3ff;
+    box-shadow: 0 8px 20px rgba(6, 49, 156, 0.15);
+}
+
+.incharge-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.incharge-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.badge-campus {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 30px;
+    background: #eef4ff;
+    color: #06319c;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.info-box {
+    margin-top: 18px;
+}
+
+.info-box p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.info-box i {
+    color: #06319c;
+    margin-right: 6px;
+}
+
+
+
+/* branch  */
+.branch-card {
+    position: relative;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.branch-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.branch-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background: linear-gradient(to top, rgb(22 48 118), rgba(0, 0, 0, 0.2), transparent);
+    transition: all 0.4s ease;
+}
+
+.branch-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    padding: 10px 18px;
+    border-radius: 50px;
+
+    background: rgb(6 28 145 / 89%);
+    border: 2px solid rgb(6 28 145 / 89%);
+    backdrop-filter: blur(15px);
+    /* -webkit-backdrop-filter: blur(15px); */
+
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.branch-overlay h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transform: translateY(30px);
+    transition: 0.4s ease;
+}
+
+.branch-overlay p {
+    font-size: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s ease;
+}
+
+.branch-card:hover img {
+    transform: scale(1.12) rotate(2deg);
+}
+
+.branch-card:hover .branch-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(6, 49, 156, 0.9),
+        rgba(0, 0, 0, 0.4)
+    );
+}
+
+.branch-card:hover h3,
+.branch-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.branch-overlay h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transition: 0.4s ease;
+}
+
+.branch-overlay p {
+    font-size: 15px;
+    margin-bottom: 0;
+    opacity: 1; /* শুরু থেকেই দেখা যাবে */
+    transition: 0.4s ease;
+}
+
+.branch-card:hover img {
+    transform: scale(1.12);
+}
+
+.branch-card:hover .branch-overlay h3 {
+    transform: translateY(-5px);
+}
+
+.branch-card:hover .branch-overlay p {
+    transform: translateY(-5px);
+}
+    </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<title>আব্দুল হোসেন উচ্চ বিদ্যালয়
+    </title>
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap4.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" rel="stylesheet"/>
+<!---Fonts-->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!---Fonts-->
+<!-- CSS only -->
+<link href="https://mubc.edu.bd/frontend/mubc/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://mubc.edu.bd/frontend/mubc/css/slick.css" rel="stylesheet"/>
+<link href="https://mubc.edu.bd/frontend/mubc/css/venobox.css" rel="stylesheet"/>
+<link href="https://mubc.edu.bd/frontend/mubc/css/style.css" rel="stylesheet"/>
+<link href="https://mubc.edu.bd/frontend/mubc/css/media.css" rel="stylesheet"/>
+<style>
+
+    /* =========================================================
+       GLOBAL HOME THEME — applied consistently to every page top
+       ========================================================= */
+    :root {
+      --home-primary: #000e59;
+      --home-primary-2: #06319c;
+      --home-accent: #f0a500;
+      --home-light: #eef4ff;
+    }
+
+
+    /* HARD FIX: mobile navigation */
+    @media (max-width: 991.98px) {
+      #mobilbar .mobilToggle {
+        background: #07176e !important;
+        border: 2px solid rgba(255,255,255,.75) !important;
+        color: #fff !important;
+      }
+      #mobilbar .mobilToggle .mobilMenuIcon,
+      #mobilbar .mobilToggle .navbar-toggler-icon {
+        width: 30px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #fff !important;
+      }
+      #mobilbar .mobilToggle .navbar-toggler-icon img,
+      #mobilbar .mobilToggle .mobilMenuIcon img {
+        width: 26px !important;
+        height: 26px !important;
+        opacity: 1 !important;
+        filter: brightness(0) invert(1) !important;
+      }
+      #mobilbar .mobilMenuCollapse,
+      #mobilbar .mobilMenuCollapse.show,
+      #mobilbar .mobilMenuCollapse.collapsing {
+        background: #07176e !important;
+        border: 0 !important;
+        box-shadow: 0 12px 28px rgba(0,0,0,.28) !important;
+      }
+      #mobilbar .mobilNavbar,
+      #mobilbar .mobilNavbar > li,
+      #mobilbar .mobilNavbar .nav-item {
+        background: #07176e !important;
+      }
+      #mobilbar .mobilNavbar .nav-link,
+      #mobilbar .mobilNavbar .dropdown-item {
+        color: #fff !important;
+        background: transparent !important;
+        text-shadow: none !important;
+      }
+      #mobilbar .mobilNavbar .nav-link:hover,
+      #mobilbar .mobilNavbar .nav-link:focus,
+      #mobilbar .mobilNavbar .dropdown-item:hover,
+      #mobilbar .mobilNavbar .dropdown-item:focus {
+        color: #fff !important;
+        background: rgba(240,165,0,.18) !important;
+      }
+      #mobilbar .mobilNavbar .dropdown-menu {
+        background: #000e59 !important;
+        border: 0 !important;
+        border-top: 2px solid #f0a500 !important;
+      }
+    }
+
+    /* Same visual language as the Home page header */
+    #topHeader,
+    #logoPart,
+    #headerSticky,
+    #menuBar,
+    #mobilbar {
+      background: linear-gradient(135deg, var(--home-primary) 0%, var(--home-primary-2) 55%, #0b5bd3 100%) !important;
+      color: #fff !important;
+    }
+
+    #topHeader {
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 2px 12px rgba(0,14,89,.18);
+    }
+
+    #logoPart {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #logoPart::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(255,255,255,.12), transparent 30%),
+                  linear-gradient(90deg, transparent, rgba(240,165,0,.10), transparent);
+      pointer-events: none;
+    }
+
+    #menuBar {
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 3px solid var(--home-accent);
+      box-shadow: 0 5px 18px rgba(0,14,89,.20);
+    }
+
+    #menuBar .nav > li > a,
+    #menuBar .nav > li > a:visited,
+    #mobilbar .nav-link,
+    #mobilbar .dropdown-item {
+      color: #fff !important;
+    }
+
+    #menuBar .nav > li > a:hover,
+    #menuBar .nav > li:hover > a,
+    #mobilbar .nav-link:hover {
+      background: rgba(240,165,0,.16) !important;
+      color: #fff !important;
+    }
+
+    #menuBar .dropdowndesk,
+    #mobilbar .dropdown-menu {
+      background: linear-gradient(180deg, #07176e 0%, #000e59 100%) !important;
+      border-top: 2px solid var(--home-accent) !important;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+    }
+
+    #menuBar .dropdowndesk a,
+    #mobilbar .dropdown-menu a {
+      color: #fff !important;
+    }
+
+    #menuBar .dropdowndesk a:hover,
+    #mobilbar .dropdown-menu a:hover {
+      background: rgba(240,165,0,.18) !important;
+      color: #fff !important;
+    }
+
+    #menuBar .navbar-toggler,
+    #mobilbar .mobilToggle {
+      border-color: rgba(255,255,255,.35) !important;
+    }
+
+    #menuBar .navbar-toggler-icon,
+    #mobilbar .navbar-toggler-icon {
+      color: #fff;
+    }
+
+
+    /* Mobile menu visibility fix */
+    #menuBar .navbar-toggler,
+    #mobilbar .mobilToggle {
+      background: #07176e !important;
+      color: #fff !important;
+      border: 2px solid rgba(255,255,255,.65) !important;
+      border-radius: 8px !important;
+      min-width: 48px;
+      min-height: 44px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,.20);
+    }
+
+    #menuBar .navbar-toggler:focus,
+    #menuBar .navbar-toggler:active,
+    #mobilbar .mobilToggle:focus,
+    #mobilbar .mobilToggle:active {
+      background: #000e59 !important;
+      color: #fff !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(240,165,0,.28) !important;
+    }
+
+    #menuBar .navbar-toggler-icon img,
+    #mobilbar .navbar-toggler-icon img {
+      width: 25px !important;
+      height: 25px !important;
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    /* Keep mobile navigation controls readable against the dark header */
+    @media (max-width: 991.98px) {
+      #mobilbar .mobilMenuCollapse,
+      #mobilbar .navbar-collapse {
+        background: #07176e !important;
+      }
+      #mobilbar .nav-link,
+      #mobilbar .dropdown-item {
+        color: #fff !important;
+      }
+      #mobilbar .nav-link {
+        border-bottom: 1px solid rgba(255,255,255,.10);
+      }
+    }
+
+    #mobilbar {
+      border-bottom: 3px solid var(--home-accent);
+    }
+
+    #latestNews .latestNews {
+      background: linear-gradient(90deg, var(--home-primary), var(--home-primary-2)) !important;
+      border-left: 4px solid var(--home-accent);
+    }
+
+    </style>
+<style>
+      #publicNoticeList { list-style:none; padding:0; margin:0; }
+      #publicNoticeList li { min-height:70px; height:auto; display:block; }
+      #publicNoticeList a { display:flex; align-items:center; color:#000e59; text-decoration:none; }
+      #publicNoticeList .home-notice-year-box { flex:0 0 58px; width:58px; float:none; padding:6px; }
+      #publicNoticeList .home-notice-content-details { flex:1; min-width:0; }
+      #publicNoticeList p { margin:0; overflow-wrap:anywhere; }
+      #publicNoticeList .notice-attachment { display:inline-block; margin:6px 8px 8px 8px; color:#0645ad; font-size:13px; }
+      /* Make the marquee readable against the page background */
+      .scrollNews {
+        background: #000e59 !important;
+        border: 1px solid #d6a900;
+        border-radius: 5px;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      #latestUpdateMarquee {
+        display: block;
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 12px;
+        box-sizing: border-box;
+        background: #000e59 !important;
+        color: #ffffff !important;
+        font-weight: 700;
+        line-height: 22px;
+      }
+      #latestUpdateMarquee a { color:#fff !important; text-decoration:none; margin-right:22px; font-weight:700; }
+      #latestUpdateMarquee a:hover { color:#ffdf55 !important; text-decoration:underline; }
+    </style>
+<style>
+.page-hero{background:linear-gradient(135deg,#063b2b,#0b6b4a);padding:55px 20px 45px;color:#fff;margin-bottom:35px}.page-hero h1{font-size:34px;font-weight:700;margin:0 0 8px}.page-hero p{margin:0;opacity:.9}.content-card{background:#fff;padding:32px;border-radius:10px;box-shadow:0 2px 15px rgba(0,0,0,.08);margin-bottom:45px;color:#333}.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-size:30px;color:#075c41;font-weight:700;margin-bottom:8px}.section-title p{color:#777}.content-card h3{color:#075c41;margin-top:28px}.content-card h4{color:#075c41}.content-card p,.content-card li{font-size:16px;line-height:1.8}.content-card ul{padding-left:22px}.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:25px 0}.info-grid>div{padding:18px;background:#f6f8f7;border-left:4px solid #f0a500;border-radius:5px}.notice-box{margin-top:25px;padding:18px;background:#fff8e8;border-left:4px solid #f0a500}.message-body{font-size:17px;line-height:1.95}.breadcrumb-page{margin-bottom:0;font-size:14px}.page-wrap{padding-bottom:20px}
+</style></head><body><div class="site-access-bar"><div class="site-access-inner"><a href="index.html"><i class="fa-solid fa-house"></i> Home</a><a href="parent-zone.html">Parent's Zone</a><a href="teacher-zone.html">Teacher's Zone</a><a href="admin.html">Admin Zone</a></div></div><style>.site-access-bar{background:#07176e;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);position:relative;z-index:1000}.site-access-inner{width:min(1180px,92%);margin:auto;display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:7px 0;flex-wrap:wrap}.site-access-inner a{color:#fff;text-decoration:none;font:500 13px/1.2 Arial,sans-serif;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:.2s}.site-access-inner a:hover{background:#fff;color:#07176e}@media(max-width:600px){.site-access-inner{justify-content:center;gap:6px}.site-access-inner a{font-size:12px;padding:6px 9px}}</style><header id="headerSticky">
+<!---logobar-->
+<section id="logoPart">
+<div class="schoolLogo">
+<div class="container py-2">
+<a href="index.html"> <div class="logo">
+<img alt="Abdul Hossain High School logo" height="100" src="ahhs-logo.png"/>
+</div>
+<div class="headerContent" style="padding-top: 10px;padding-bottom: 10px">
+<h3 style="color: #efefef">
+                আব্দুল হোসেন উচ্চ বিদ্যালয়
+              </h3>
+<div style="color: #efefef;padding-top: 5px;font-weight: 500">
+                Abdul Hossain High School &amp; Nandail, Mymensingh
+                <br/>
+                Email : ahhs112025@gmail.com
+              </div>
+</div>
+<div class="mujib">
+</div>
+</a>
+</div>
+</div>
+</section>
+<!---logobar-->
+<!----------------navBar------------->
+<nav class="navbar navbar-expand-lg deskMenu" id="menuBar" style="display: flex; justify-content: center;align-items: center;flex-direction:column;margin-top:-15px">
+<div class="">
+<!-- <a href="#">
+				<img src="ahhs-logo.png" alt="" height="70">
+			</a> -->
+<button aria-controls="desktopNavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#desktopNavbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"> <img alt="" src="https://mubc.edu.bd/frontend/mubc/image/ic_menu_24px.svg"/>
+</span>
+</button>
+<div class="collapse navbar-collapse" id="desktopNavbarSupportedContent">
+<ul class="nav navbar-nav">
+<li>
+<a href="index.html" style="color: #fff;">              Home
+</a>
+</li>
+<li>
+<a href="about-us.html" style="color: #fff;">                About us
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="mission-and-vision.html">                    Our Mission and Vision
+</a>
+</li>
+<li>
+<a href="at-a-glance.html">                    At a Glance
+</a>
+</li>
+<li>
+<a href="history.html">                    History of the College
+</a>
+</li>
+<li>
+<a href="governing-body.html">                    GOVERNING BODY
+</a>
+</li>
+<li>
+<a href="message-of-the-principal.html">                    MESSAGE OF THE PRINCIPAL
+</a>
+</li>
+<li>
+<a href="governing-body-members.html">                    Governing Body
+</a>
+</li>
+<li>
+<a href="ex-chairman.html">                    Ex. Chairman
+</a>
+</li>
+<li>
+<a href="ex-principal.html">                    Ex. Principal
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="academic.html" style="color: #fff;">                Academic
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="academic-rules.html">                    Academic Rules
+</a>
+</li>
+<li>
+<a href="attendance-information.html">                    Attendence Information
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="administration.html" style="color: #fff;">                Administration
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="class-teacher.html">                    Class Teacher
+</a>
+</li>
+<li>
+<a href="teacher.html">                    Teacher
+</a>
+</li>
+<li>
+<a href="staff.html">                    Staff
+</a>
+</li>
+<li>
+<a href="student.html">                    Student
+</a>
+</li>
+<li>
+<a href="notice-board.html">                    Notice Board
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="routine.html" style="color: #fff;">                Routine
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="teacher-routine.html">                    Teacher Routine
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="admission.html" style="color: #fff;">                Admission
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="how-to-apply.html">                    How To Apply
+</a>
+</li>
+<li>
+<a href="admission-circular.html">                    Admission Circular
+</a>
+</li>
+<li>
+<a href="admission-result.html">                    Admission Result
+</a>
+</li>
+<li>
+<a href="online-admission.html">                    Online Admission
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="information.html" style="color: #fff;">                Information
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="holidays.html">                    List of Holidays
+</a>
+</li>
+<li>
+<a href="tuition-fees.html">                    Tuition Fees
+</a>
+</li>
+<li>
+<a href="payment-procedure.html">                    Payment Procedure
+</a>
+</li>
+<li>
+<a href="mobile-banking.html">                    Mobile Banking
+</a>
+</li>
+<li>
+<a href="daily-activities.html">                    Daily Activities
+</a>
+</li>
+<li>
+<a href="exam-schedule.html">                    Exam Schedule
+</a>
+</li>
+<li>
+<a href="student-uniform.html">                    Student Uniform
+</a>
+</li>
+<li>
+<a href="examination-system.html">                    Examination System
+</a>
+</li>
+<li>
+<a href="rules-and-regulation.html">                    Rules and Regulation
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="syllabus.html" style="color: #fff;">                Syllabus
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="bangla-version.html">                    Bangla Version
+</a>
+</li>
+<li>
+<a href="english-version.html">                    English Version
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="facilities.html" style="color: #fff;">                Facilities
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="library.html">                    Library
+</a>
+</li>
+<li>
+<a href="ict-lab.html">                    ICT Lab
+</a>
+</li>
+<li>
+<a href="play-ground.html">                    Play Ground
+</a>
+</li>
+<li>
+<a href="chemistry-lab.html">                    Chemistry Lab
+</a>
+</li>
+<li>
+<a href="biology-lab.html">                    Biology Lab
+</a>
+</li>
+<li>
+<a href="geography-lab.html">                    Geography Lab
+</a>
+</li>
+<li>
+<a href="co-curricular-activity.html">                    Co-curricular Activity
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="results.html" style="color: #fff;">                Results
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="board-exam-result.html">                    Board Exam Result
+</a>
+</li>
+<li>
+<a href="pec-result.html">                    PEC Result
+</a>
+</li>
+<li>
+<a href="jsc-result.html">                    JSC Result
+</a>
+</li>
+<li>
+<a href="ssc-result.html">                    SSC Result
+</a>
+</li>
+<li>
+<a href="hsc-result.html">                    HSC Result
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="gallery.html" style="color: #fff;">                Gallery
+                <i class="fa-solid fa-caret-down" style="    font-size: 9px;font-weight: 600;"></i>
+</a>
+<ul class="dropdowndesk" style="border-top: 2px solid #f0a500;">
+<li>
+<a href="photo-gallery.html">                    Photo Gallery
+</a>
+</li>
+<li>
+<a href="video-gallery.html">                    Video Gallary
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="contact.html" style="color: #fff;">                Contact
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!----------------navBar------------->
+<!----------------navBar------------->
+<nav class="navbar navbar-expand-lg mobilMenu" id="mobilbar">
+<div class="container">
+<a class="navbar-brand logoMobil" href="index.html"> <img alt="Abdul Hossain High School logo" height="80" src="ahhs-logo.png"/>
+</a>
+<button aria-controls="mobileNavbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler mobilToggle" data-target="#mobileNavbarSupportedContent" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon mobilMenuIcon"> <img alt="" src="https://mubc.edu.bd/frontend/mubc/image/ic_menu_24px.svg"/>
+</span>
+</button>
+<div class="collapse navbar-collapse mobilMenuCollapse" id="mobileNavbarSupportedContent">
+<ul class="navbar-nav mobilNavbar mr-auto">
+<li class="nav-item dropdown">
+<a class="nav-link" href="index.html">                Home
+</a>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="about-us.html" id="navbarDropdown" role="button">                About us
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="mission-and-vision.html">                  Our Mission and Vision
+</a>
+<a class="dropdown-item" href="at-a-glance.html">                  At a Glance
+</a>
+<a class="dropdown-item" href="history.html">                  History of the College
+</a>
+<a class="dropdown-item" href="governing-body.html">                  GOVERNING BODY
+</a>
+<a class="dropdown-item" href="message-of-the-principal.html">                  MESSAGE OF THE PRINCIPAL
+</a>
+<a class="dropdown-item" href="governing-body-members.html">                  Governing Body
+</a>
+<a class="dropdown-item" href="ex-chairman.html">                  Ex. Chairman
+</a>
+<a class="dropdown-item" href="ex-principal.html">                  Ex. Principal
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="academic.html" id="navbarDropdown" role="button">                Academic
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="academic-rules.html">                  Academic Rules
+</a>
+<a class="dropdown-item" href="attendance-information.html">                  Attendence Information
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="administration.html" id="navbarDropdown" role="button">                Administration
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="class-teacher.html">                  Class Teacher
+</a>
+<a class="dropdown-item" href="teacher.html">                  Teacher
+</a>
+<a class="dropdown-item" href="staff.html">                  Staff
+</a>
+<a class="dropdown-item" href="student.html">                  Student
+</a>
+<a class="dropdown-item" href="notice-board.html">                  Notice Board
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="routine.html" id="navbarDropdown" role="button">                Routine
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="teacher-routine.html">                  Teacher Routine
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="admission.html" id="navbarDropdown" role="button">                Admission
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="how-to-apply.html">                  How To Apply
+</a>
+<a class="dropdown-item" href="admission-circular.html">                  Admission Circular
+</a>
+<a class="dropdown-item" href="admission-result.html">                  Admission Result
+</a>
+<a class="dropdown-item" href="online-admission.html">                  Online Admission
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="information.html" id="navbarDropdown" role="button">                Information
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="holidays.html">                  List of Holidays
+</a>
+<a class="dropdown-item" href="tuition-fees.html">                  Tuition Fees
+</a>
+<a class="dropdown-item" href="payment-procedure.html">                  Payment Procedure
+</a>
+<a class="dropdown-item" href="mobile-banking.html">                  Mobile Banking
+</a>
+<a class="dropdown-item" href="daily-activities.html">                  Daily Activities
+</a>
+<a class="dropdown-item" href="exam-schedule.html">                  Exam Schedule
+</a>
+<a class="dropdown-item" href="student-uniform.html">                  Student Uniform
+</a>
+<a class="dropdown-item" href="examination-system.html">                  Examination System
+</a>
+<a class="dropdown-item" href="rules-and-regulation.html">                  Rules and Regulation
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="syllabus.html" id="navbarDropdown" role="button">                Syllabus
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="bangla-version.html">                  Bangla Version
+</a>
+<a class="dropdown-item" href="english-version.html">                  English Version
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="facilities.html" id="navbarDropdown" role="button">                Facilities
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="library.html">                  Library
+</a>
+<a class="dropdown-item" href="ict-lab.html">                  ICT Lab
+</a>
+<a class="dropdown-item" href="play-ground.html">                  Play Ground
+</a>
+<a class="dropdown-item" href="chemistry-lab.html">                  Chemistry Lab
+</a>
+<a class="dropdown-item" href="biology-lab.html">                  Biology Lab
+</a>
+<a class="dropdown-item" href="geography-lab.html">                  Geography Lab
+</a>
+<a class="dropdown-item" href="co-curricular-activity.html">                  Co-curricular Activity
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="results.html" id="navbarDropdown" role="button">                Results
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="board-exam-result.html">                  Board Exam Result
+</a>
+<a class="dropdown-item" href="pec-result.html">                  PEC Result
+</a>
+<a class="dropdown-item" href="jsc-result.html">                  JSC Result
+</a>
+<a class="dropdown-item" href="ssc-result.html">                  SSC Result
+</a>
+<a class="dropdown-item" href="hsc-result.html">                  HSC Result
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link" data-toggle="dropdown" href="gallery.html" id="navbarDropdown" role="button">                Gallery
+                <i class="fas fa-chevron-down"></i>
+</a>
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="photo-gallery.html">                  Photo Gallery
+</a>
+<a class="dropdown-item" href="video-gallery.html">                  Video Gallary
+</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link" href="contact.html">                Contact
+</a>
+</li>
+</ul>
+<div class="navContact">
+<h4>
+                Contact Info
+              </h4>
+<ul>
+<li>
+<i class="fab fa-facebook-f"></i>
+</li>
+<li>
+<i class="fab fa-twitter"></i>
+</li>
+<li>
+<i class="fab fa-instagram"></i>
+</li>
+<li>
+<i class="fab fa-linkedin-in"></i>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<!----------------navBar------------->
+</header><main class="page-wrap"><div class="page-hero"><div class="container"><div class="breadcrumb-page">Home   /   Payment Procedure</div><h1>Payment Procedure</h1><p>How to complete school fee and other institutional payments.</p></div></div><div class="container"><div class="row"><div class="col-lg-9 mx-auto"><div class="content-card"><div class="section-title"><h2>Payment Procedure</h2><p>Abdul Hossain High School</p></div><p>How to complete school fee and other institutional payments.</p><h3>What this section provides</h3><ul><li>Clear and practical information for students and guardians.</li><li>Guidance for academic, administrative and campus-related needs.</li><li>Important instructions, responsibilities and institutional practices.</li><li>Useful references for planning, participation and communication with the school.</li></ul><div class="notice-box"><strong>Important:</strong> Please check the school Notice Board for the latest dates, circulars, schedules and official announcements.</div></div></div></div></div></main><footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<div class="upfooter">
+<ul>
+<li>
+<img alt="" src="https://mubc.edu.bd/frontend/mubc/image/mail.png"/>
+<span>                  Get
+                                Appointment
+</span>
+</li>
+<li>
+<img alt="" src="https://mubc.edu.bd/frontend/mubc/image/placeholder.png"/>
+<span>                  Contact Us Today
+</span>
+</li>
+<li>
+<img alt="" src="https://mubc.edu.bd/frontend/mubc/image/paper-plane.png"/>
+<span>                  Take
+                                a School Tour
+</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row mt-4 m-footer">
+<div class="col-md-12">
+<div class="footer-content">
+<div style="background-color: #062f97;padding:7px;border-radius: 3px;">
+<iframe allowfullscreen="" height="130px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.1268789979936!2d90.62124367535986!3d24.51569167815596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37568b2be683c63b%3A0x606533de9a6cddd5!2sAbdul%20Hossain%20High%20School!5e0!3m2!1sen!2sbd!4v1786428628365!5m2!1sen!2sbd" style="border:0;" width="100%">
+</iframe>
+</div>
+<div class="footer-inner-content">
+<div class="quick-view">
+<h5>
+                    Important Links
+                  </h5>
+<ul>
+</ul>
+</div>
+</div>
+<div class="footer-inner-content">
+<div class="quick-view">
+<h5>
+                    Contact Info
+                  </h5>
+<ul>
+<li>
+<a href="#">                      Nandail, Mymensingh
+</a>
+</li>
+<li>
+<a href="#">                      Phone: 01309112025
+                                        
+</a>
+</li>
+<li>
+<a href="#">                      Email:
+                                        ahhs112025@gmail.com
+</a>
+</li>
+<p style="color: #fff;margin-top: 4px;margin-bottom: 7px; font-weight: bold;">
+                      Working
+                                    Hours
+                    </p>
+<li>
+                      Week Days: 10 AM - 4 PM
+                    </li>
+<li>
+                      Friday,Saturday : Close
+                    </li>
+</ul>
+</div>
+</div>
+<div class="footer-inner-content">
+<div class="quick-view">
+<h5>
+                    Visitor Counter
+                  </h5>
+<div class="">
+<ul>
+<!-- <li class="list-group-item"><i class="fa fa-laptop" aria-hidden="true"> </i> Now Online Visitors : <b>11</b> </li> -->
+<li>
+<i aria-hidden="true" class="fa fa-desktop"></i>
+                        Today Total Visitors :
+                        <b>                        702
+</b>
+</li>
+<!-- <li><i class="fa fa-arrow-circle-o-left" aria-hidden="true"> </i> Yesterday Total Visitors : <b>542</b> </li> -->
+<!-- <li><i class="fa  fa-users" aria-hidden="true"> </i> Weekly Total Visitors : <b>13</b> </li> -->
+<li>
+                        Grand Total From 30 Jun 2021 :
+                        <b>                        439334
+</b>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row mt-3">
+<div class="col-lg-12 text-center">
+<div class="facebook">
+<div class="single_footer_widget">
+<ul class="footer_widget_nav">
+<li>
+<a href="#" target="_blank"> <i class="fa fa-facebook"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+<p>
+                © Copyright 2026, All Rights Reserved
+                <br/>
+                A product of
+                <a href="https://www.nayem.eu.org">  Nayem Chowdhury              
+                .
+              </a></p>
+<p>
+                Maintenance by IT Department
+              </p>
+</div>
+</div>
+</div>
+</div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/jquery-1.12.4.min.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/bootstrap.min.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/slick.min.js">
+</script><script crossorigin="anonymous" src="https://kit.fontawesome.com/dedaf8eeba.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/venobox.min.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/wow.min.js">
+</script><script src="https://mubc.edu.bd/frontend/mubc/js/custom.js">
+</script>
+<script>
+(function(){
+  function initMobileNavigation(){
+    var mobileNav=document.getElementById('mobileNavbarSupportedContent');
+    var mobileToggle=document.querySelector('#mobilbar .mobilToggle');
+    if(!mobileNav || !mobileToggle) return;
+
+    mobileToggle.setAttribute('data-target','#mobileNavbarSupportedContent');
+    mobileToggle.setAttribute('aria-controls','mobileNavbarSupportedContent');
+    mobileToggle.type='button';
+
+    mobileToggle.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var open=!mobileNav.classList.contains('show');
+      mobileNav.classList.toggle('show',open);
+      mobileToggle.setAttribute('aria-expanded',String(open));
+    });
+
+    mobileNav.querySelectorAll('.nav-item.dropdown > .nav-link').forEach(function(link){
+      var menu=link.parentElement.querySelector(':scope > .dropdown-menu');
+      if(!menu) return;
+      link.addEventListener('click',function(e){
+        if(window.innerWidth > 991) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var item=link.parentElement;
+        var wasOpen=item.classList.contains('show');
+        mobileNav.querySelectorAll('.nav-item.dropdown.show').forEach(function(other){
+          if(other!==item){
+            other.classList.remove('show');
+            var om=other.querySelector(':scope > .dropdown-menu');
+            if(om) om.classList.remove('show');
+            var ol=other.querySelector(':scope > .nav-link');
+            if(ol) ol.setAttribute('aria-expanded','false');
+          }
+        });
+        item.classList.toggle('show',!wasOpen);
+        menu.classList.toggle('show',!wasOpen);
+        link.setAttribute('aria-expanded',String(!wasOpen));
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initMobileNavigation);
+  else initMobileNavigation();
+})();
+</script>
+</body></html>
