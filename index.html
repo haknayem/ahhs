@@ -640,6 +640,24 @@
       #latestUpdateMarquee a { color:#fff !important; text-decoration:none; margin-right:22px; font-weight:700; }
       #latestUpdateMarquee a:hover { color:#ffdf55 !important; text-decoration:underline; }
     </style>
+
+<style id="ahhs-header-scroll-fix">
+/* Header scroll behavior: keep the complete school header in normal document flow.
+   It will scroll up and disappear naturally; colors, links and dropdown behavior stay unchanged. */
+#headerSticky {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  inset: auto !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  width: 100%;
+}
+</style>
+
 </head>
 <body>
 <!--Start of Tawk.to Script-->
